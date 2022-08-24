@@ -1,0 +1,17 @@
+{
+    "name": "mainpage",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "css": "node-sass ./style/index.scss ./style.css",
+        "dev": "nodemon -L -x 'npm run css' -e scss,sass,html"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "node-sass": "^7.0.1",
+        "nodemon": "^2.0.19"
+    }
+}

@@ -1,0 +1,38 @@
+@media only screen and (max-width: 1920px) {
+    section {
+        padding: 1rem;
+        background-color: #333333;
+        display: flex;
+        justify-content: center;
+        p {
+            margin: auto;
+            color: #cccccc;
+            font-size: 1.75rem;
+            padding: 0.5em;
+        }
+        img {
+            margin-right: 10%;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    section {
+        padding: 1rem;
+        background-color: #333333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        p {
+            color: #cccccc;
+            font-size: 1.75rem;
+            padding: 1em;
+        }
+        img {
+            margin: 0;
+            padding: 1em;
+            max-width: 100%;
+        }
+    }
+}

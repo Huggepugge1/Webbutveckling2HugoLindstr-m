@@ -1,0 +1,40 @@
+.upper-edge {
+    width: 100%;
+    height: 25%;
+    top: 0;
+    border-radius: 40%;
+    background-color: black;
+    position: absolute;
+}
+
+.lower-edge {
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    border-radius: 40%;
+    background-color: black;
+    position: absolute;
+}
+
+.next-slide {
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    border-radius: 100%;
+    border: none;
+    font-size: 5rem;
+    text-align: center;
+    right: 10%;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        max-width: 30%;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+}

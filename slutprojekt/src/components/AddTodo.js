@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 import addCard from '../redux/actions/addCard';
 
 class AddTodo extends React.Component {
+    componentDidMount() {
+        onmousemove = (e) => {
+            const button = document.querySelector("#add-todo-button");
+            const mouseX = e.clientX - button.getBoundingClientRect().left;
+            const mouseY = e.clientY - button.getBoundingClientRect().top;
+            button.style.setProperty('--x-pos', `${mouseX}px`);
+            button.style.setProperty('--y-pos', `${mouseY}px`);
+        }
+    }
+
     constructor(props) {
         super(props);
         this.state = {value: ''};
@@ -25,8 +35,10 @@ class AddTodo extends React.Component {
     render() {
         return (
             <div className="add-todo flex flex-wrap">
+                <h1>Todo</h1>
                 <input type="text" onChange={this.handleChange} value={this.state.value}/>
-                    <button className="add-todo-button flex" onClick={this.handleSubmit}>Add Todo</button>
+                <button id="add-todo-button" className="flex" onClick={this.handleSubmit}>Add Todo</button>
+                <script src="../style/style.js"></script>
             </div>
         )
     }

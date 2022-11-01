@@ -1,5 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+$white: rgba(225, 225, 225, 0.85);
+$dark: rgba(200, 200, 200, 0.1);
+
 .add-todo {
+    background-image: linear-gradient(
+        rgb(50, 20, 60),
+        rgb(45, 20, 50),
+        rgb(20, 20, 20)
+    );
     margin-top: 13vh;
+    margin-bottom: 25px;
+    padding: min(20px, 2vh) min(100px, 15vw);
     width: 100%;
-    height: 15vh;
+    min-height: 10vh;
+    
+    h1 {
+        font-size: 5rem;
+        margin: 0;
+        color: $white;
+    }
+    
+    input {
+        font-family: 'Mukta', sans-serif;
+        background-color: $dark;
+        border: none;
+        font-size: 2rem;
+        border-radius: 10000px;
+        padding: 2% 5% 2% 5%;
+        margin: 0 50% 20px 50%;
+        color: $white;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        position: relative;
+        color: $white;
+        border: 2px solid $white;
+        border-radius: 10px;
+        background-color: transparent;
+        transition: 
+            background-color 250ms ease-in-out,
+            transform 150ms ease-in-out,
+            color 150ms ease-in-out;
+        &:hover {
+            color: rgb(20, 20, 20);
+            transform: scale(1.1);
+            &::after {
+                opacity: 1;
+            }
+        }
+        overflow: hidden;
+        &::after {
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: var(--y-pos);
+            left: var(--x-pos);
+            height: 500%;
+            width: 500%;
+            z-index: -1;
+            content: "";
+            background-image: radial-gradient(
+                600px circle,
+                $white, transparent 40%
+            );
+            transition: opacity 150ms ease-in-out;
+        }
+    }
 }

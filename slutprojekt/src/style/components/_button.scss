@@ -1,0 +1,25 @@
+$primary-color: rgba(200, 200, 200, 0.5);
+$secondary-color: rgba(50, 50, 50, 0.75);
+
+button {
+    font-size: 1.5rem;
+    padding: 2em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.add-todo-button {
+    font-weight: 1000;
+    font-size: 2em;
+    margin: 0 25% 0 25%;
+    height: 1.75em;
+    border: none;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    background-color: transparent;
+    transition: all 200ms ease-in-out;
+    &:hover {
+        background-color: $primary-color;
+        color: $secondary-color;
+    }
+}

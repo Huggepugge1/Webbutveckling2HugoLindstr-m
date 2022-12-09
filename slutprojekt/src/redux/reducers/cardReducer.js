@@ -1,29 +1,21 @@
 import actionTypes from '../actions/actionTypes';
+import cardInitialState from '../cardInitialState';
 
-const initialState = [
-    {
-        id: 1,
-        task: "Wash the car",
-        cardState: "TODO"
-    }   
-]
-
-const cardReducer = (state = initialState, action) => {
+const cardReducer = (state = cardInitialState, action) => {
     switch (action.type) {
         case actionTypes.ADD_CARD:
-            console.log(action.card, ...state)
-            return [ ...state, action.card ];
-        
-        case actionTypes.CHANGE_CARD_STATE:
-            let newState = [ ...state ]
-            return newState.map(card => {
-                if (card.id != action.id) return card
-                else return { ...card, cardState: action.newState }
-            })
+            return [...state, action.card];
+
+        case actionTypes.CHANGE_CARD_LIST:
+            const newState = state.filter(e => e.id !== action.card.id);
+            return [...newState, action.card];
+
+        case actionTypes.DELETE_CARD:
+            return state.filter(e => e.id !== action.id)
 
         default:
             return state;
     }
-} 
+};
 
 export default cardReducer;

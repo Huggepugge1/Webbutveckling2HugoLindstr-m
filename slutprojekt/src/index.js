@@ -1,20 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+import {Provider} from 'react-redux';
 
 import './style/index.scss';
 
 import store from './redux/store';
-import App from './App';
-import { DndProvider } from 'react-dnd';
+import Board from './pages/Board';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import NoPage from "./pages/Nopage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
-    <DndProvider backend={HTML5Backend}>
-      <App />
-    </DndProvider>
-  </Provider>
+    <Provider store={store}>
+        <BrowserRouter>
+            <Routes>
+                <Route path={"/"}>
+                    <Route index element={<Dashboard />}/>
+                    <Route path={"board"} element={<Board />}/>
+                    <Route path={"*"} element={<NoPage />}/>
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    </Provider>
 );

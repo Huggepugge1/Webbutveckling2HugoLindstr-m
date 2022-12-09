@@ -1,22 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
 
-$white: rgba(225, 225, 225, 0.85);
-$dark: rgba(200, 200, 200, 0.1);
+$white: rgba(225, 225, 225, 0.95);
+$dark: rgba(200, 200, 200, 0.10);
 
 .add-todo {
-    background-image: linear-gradient(
-        rgb(50, 20, 60),
-        rgb(45, 20, 50),
-        rgb(20, 20, 20)
-    );
-    margin-top: 13vh;
-    margin-bottom: 25px;
-    padding: min(20px, 2vh) min(100px, 15vw);
-    width: 100%;
+    margin: 2rem auto;
+    max-width: 75vw;
+    padding: 0;
+    width: 70%;
     min-height: 10vh;
     
     h1 {
-        font-size: 5rem;
+        font-size: 4rem;
         margin: 0;
         color: $white;
     }
@@ -28,14 +23,18 @@ $dark: rgba(200, 200, 200, 0.1);
         font-size: 2rem;
         border-radius: 10000px;
         padding: 2% 5% 2% 5%;
-        margin: 0 50% 20px 50%;
+        margin: 2rem 0;
         color: $white;
+        width: 80%;
+        transition: background-color 200ms ease-in-out;
         &:focus {
             outline: none;
+            background-color: rgba(200, 200, 200, 0.15);
         }
     }
 
     button {
+        margin: 0;
         position: relative;
         color: $white;
         border: 2px solid $white;
@@ -47,10 +46,8 @@ $dark: rgba(200, 200, 200, 0.1);
             color 150ms ease-in-out;
         &:hover {
             color: rgb(20, 20, 20);
+            background-color: rgba($white, 0.8);
             transform: scale(1.1);
-            &::after {
-                opacity: 1;
-            }
         }
         overflow: hidden;
         &::after {
@@ -63,10 +60,6 @@ $dark: rgba(200, 200, 200, 0.1);
             width: 500%;
             z-index: -1;
             content: "";
-            background-image: radial-gradient(
-                600px circle,
-                $white, transparent 40%
-            );
             transition: opacity 150ms ease-in-out;
         }
     }
